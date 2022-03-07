@@ -41,22 +41,6 @@ _logger = logging.getLogger(__name__)
 # when using this Python module as a library.
 
 
-def fib(n):
-    """Fibonacci example function
-
-    Args:
-      n (int): integer
-
-    Returns:
-      int: n-th Fibonacci number
-    """
-    assert n > 0
-    a, b = 1, 1
-    for _i in range(n - 1):
-        a, b = b, a + b
-    return a
-
-
 def csv2xlsx(csv, xlsx_path: str) -> None:
 
     df = pd.read_csv(csv)
@@ -142,6 +126,6 @@ if __name__ == "__main__":
     # After installing your project with pip, users can also run your Python
     # modules as scripts via the ``-m`` flag, as defined in PEP 338::
     #
-    #     python -m csv2xlsx.skeleton 42
+    #     python -m csv2xlsx.main -i license.csv -o license.xlsx
     #
     run()
